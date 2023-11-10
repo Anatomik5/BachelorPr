@@ -1,5 +1,5 @@
 # BachelorPr
-Just core how we can add data from Java to Excel. /br
+Just core how we can add data from Java to Excel. \br
 Do not forget to create .xslx file in necessery directory
 Current it is C:/savedexcel/test.xlsx
 Also the main function is in the main/java/WriteDataToExcel
