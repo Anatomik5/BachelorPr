@@ -17,25 +17,20 @@ public class WriteDataToExcel {
 
         XSSFRow row; // creating a row
 
-        Map<String, Object[]> studentData = new TreeMap<String, Object[]>();
+        Map<Integer, Object[]> studentData = new TreeMap<Integer, Object[]>();
 
-        studentData.put("1", new Object[] { "Matr. Nummer", "NAME", "AGE" });
 
-        studentData.put("2", new Object[] { "11111111", "Simon", "10"});
+        studentData.put(1, new Object[] { "Inv.Nr.", "Alte Inv.Nr.", "Schublade"});
 
-        studentData.put("3", new Object[] { "11111112", "Johnny", "11"});
+        studentData.put(2, new Object[] { "11111111", "Simon", "10"});
 
-        studentData.put("4", new Object[] { "2120124", "Mahoraga", "22312"});
+        studentData.put(3, new Object[] { "11111112", "Johnny", "11"});
 
-        studentData.put("5", new Object[] { "e3289ru23ru", "Ferdiannd", "222"});
-
-        studentData.put("6", new Object[] {"0323902209", "Alisher", "2222"});
-
-        Set<String> keyid = studentData.keySet();
+        Set<Integer> keyid = studentData.keySet();
 
         int rowid = 0;
 
-        for (String key : keyid) { // writing the data into the spreadsheet
+        for (Integer key : keyid) { // writing the data into the spreadsheet
             row = spreadsheet.createRow(rowid++); //creating new row in table
             Object[] objectArr = studentData.get(key);
             int cellid = 0;
@@ -45,7 +40,7 @@ public class WriteDataToExcel {
             }
         }
 
-        FileOutputStream out = new FileOutputStream(new File("C:/savedexcel/test.xlsx")); // writing in existing excel, change it for new directory
+        FileOutputStream out = new FileOutputStream("C:/savedexcel/test.xlsx"); // writing in existing excel, change it for new directory
         workbook.write(out); //push file
         out.close();
     }
